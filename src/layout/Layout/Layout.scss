@@ -1,0 +1,67 @@
+@import "variables";
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+body {
+  min-width: 1430px;
+}
+
+#root {
+  height: 100%;
+}
+
+.layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+
+}
+
+
+main {
+  flex-grow: 1;
+}
+
+header, main, footer {
+  flex-shrink: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-wrapper {
+  width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  &_sm {
+    width: 1000px;
+  }
+}
+
+.title-section {
+  color: #000000;
+  font-family: $roboto-condensed;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.title-events {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: $roboto-condensed;
+  color: #060606;
+  line-height: 1.1;
+
+}

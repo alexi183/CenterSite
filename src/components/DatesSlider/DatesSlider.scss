@@ -1,0 +1,146 @@
+@import "../../layout/Layout/variables";
+@import "../../layout/Layout/mixins";
+
+.dates-slider {
+  margin-bottom: 50px;
+  display: flex;
+  &__all {
+
+  }
+  &__swiper-wrapper {
+    position: relative;
+    padding: 0 60px;
+    width: calc(100% - 140px);
+  }
+  &__date {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    //transition: all 0.2s;
+  }
+  &__month {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    //transition: color 0.2s;
+  }
+  &__btns-row {
+
+  }
+  &__arrows {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  &__arrows-next {
+    left: auto;
+    right: 0;
+  }
+  &__arrows-prev {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__slide {
+    cursor: pointer;
+    padding-top: 3px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    margin: 0 0 10px;
+    &:hover:not(.active) {
+      /*border: 2px solid $crimson;*/
+      .dates-slider__date, .dates-slider__month {
+        color: $crimson
+      }
+
+    }
+    &.active {
+      color: #fff;
+      background: $crimson;
+      position: relative;
+      cursor: auto;
+      &:after {
+        content: '';
+        position: absolute;
+        @include triangle-down(10px, 8px, $crimson);
+        top: calc(100% + 2px);
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .2s;
+      }
+    }
+  }
+
+  &__all-btn {
+    width: 100px;
+    height: 70px;
+    color: #000;
+    border: 2px solid transparent;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-right: 40px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    //transition: all .2s;
+    &:hover {
+      border: 2px solid $crimson;
+      color: #000000;
+      &:after {
+        content: '';
+        position: absolute;
+        @include triangle-down(12px, 11px, $crimson);
+        top: 101%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        @include triangle-down(10px, 9px, #ffffff);
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+      }
+
+    }
+
+    &.active {
+      /* background-color: $crimson;*/
+      background: transparent;
+      border: 2px solid $crimson;
+      color: #000000;
+      &:after {
+        content: '';
+        position: absolute;
+        @include triangle-down(12px, 11px, $crimson);
+        top: 101%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        @include triangle-down(10px, 9px, #ffffff);
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+      }
+    }
+
+  }
+}

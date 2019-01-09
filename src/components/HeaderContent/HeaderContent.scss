@@ -1,0 +1,48 @@
+/*
+.header-content {
+    height: 473px;
+}
+
+.header-map {
+    position: absolute;
+    top: 17px;
+    !*height: 526px;*!
+    //z-index: 150;
+}
+
+.header-map2 {
+    position: absolute;
+    top: -17%;
+    !*height: 526px;*!
+    //z-index: 150;
+}
+*/
+
+.header-content {
+    height: 473px;
+}
+
+.header-map {
+    position: absolute;
+
+    &:nth-of-type(odd) {
+        width: 890px;
+        top: -7%;
+    }
+
+    &:nth-of-type(even) {
+        top: 17px;
+    }
+}
+
+.slideFadeOut {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 2s;
+}
+
+.slideFadeIn {
+    opacity: 1;
+    visibility: visible;
+    transition: all 2s;
+}

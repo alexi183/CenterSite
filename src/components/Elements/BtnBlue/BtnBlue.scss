@@ -1,0 +1,91 @@
+@import "../../../layout/Layout/variables";
+
+.btn-blue {
+  height: 38px;
+  display: inline-block;
+  line-height: 38px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: $royal-blue;
+  border-radius: 15px;
+  padding: 0 20px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .2s;
+  &:hover {
+    color: #fff;
+    background: #0281aa;
+  }
+  &_lighter {
+    background-color: #1277a2;
+  }
+  &_transparent {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #7b7b7b;
+    &:hover {
+      color: #7b7b7b;
+      background-color: #f0f0f0;
+      &:active {
+        background-color: #d4d4d4;
+        box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.44);
+      }
+    }
+  }
+  &__content {
+    position: relative;
+  }
+  &__arr {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+
+.soc-btn {
+  height: 34px;
+  display: inline-block;
+  line-height: 34px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: $royal-blue;
+  border-radius: 17px;
+  width: 190px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .3s;
+  &_lighter {
+    background-color: #1277a2;
+  }
+  &__content {
+    position: relative;
+    vertical-align: middle;
+  }
+  &__arr {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:hover {
+    color: #fff;
+    background: #0281aa;
+  }
+}

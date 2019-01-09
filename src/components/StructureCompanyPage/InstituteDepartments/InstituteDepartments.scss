@@ -1,0 +1,47 @@
+.structure-page__filial {
+
+   &-person {
+      &-img {
+         width: 208px;
+         height: auto;
+         img {
+            width: 100%;
+            height: auto;
+         }
+      }
+
+      &-info {
+         line-height: 24px;
+         font-weight: 400;
+      }
+
+      &-name {
+         font-size: 24px;
+      }
+
+      &-status{
+         font-size: 20px;
+         font-weight: 400;
+      }
+   }
+
+   &-activity {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      span {
+         font-family: Roboto;
+         font-size: 18px;
+         font-weight: 300;
+         line-height: 24px;
+      }
+   }
+
+   &-directions-list {
+
+   }
+}
+
+.w33 {
+   width: 33%;
+}

@@ -1,0 +1,27 @@
+@import "../../layout/Layout/variables";
+@import "../../layout/Layout/mixins";
+
+.events {
+  animation: fadein 0.886s;
+  margin-bottom: 60px;
+  &__calendar-wrapper {
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  &__calendar-aside {
+
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__calendar-aside-caption {
+    text-decoration: underline;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

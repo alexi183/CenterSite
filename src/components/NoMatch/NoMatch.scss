@@ -1,0 +1,39 @@
+@import "../../layout/Layout/variables";
+
+.no-match {
+  background: url("../../img/404-2.png") 50% no-repeat;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &__inner-wrapper {
+  }
+  &__error {
+    font-size: 60px;
+    font-weight: 400;
+    color: $royal-blue;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  &__code {
+    color: #6b6f71;
+    font-size: 290px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  &__description {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+    color: $royal-blue;
+    margin-bottom: 40px;
+  }
+  &__description-2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: $royal-blue;
+    margin-bottom: 50px;
+  }
+}

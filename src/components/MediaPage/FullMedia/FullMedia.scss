@@ -1,0 +1,114 @@
+.FullMedia {
+    margin-bottom: 44px;
+    .title-item {
+        position: relative;
+        // margin-top: -42px;
+        margin-bottom: 43px;
+        padding-top: 25px;
+        padding-left: 95px;
+        padding-right: 200px;
+        padding-bottom: 50px;
+        background-color: #ecedef;
+        overflow: hidden;
+        &__date {
+            color: #000;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        &__name {
+            position: relative;
+            color: #000;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 0;
+            z-index: 100;
+        }
+    }
+    &__video {
+        margin:  0 auto;
+    }
+    .FullNews__top-img {
+        width: 1005px;
+        position: relative;
+    }
+    // .swiper-container:last-child .swiper-slide-active {
+    //     opacity: 1 !important;
+    // }
+    
+    // .swiper-container:last-child .swiper-slide {
+    //     opacity: 0.4;
+    // }
+    .swiper-slide {
+        cursor: pointer;
+    }
+    .slider-image {
+        position: relative;
+        // .download-btn {
+        //     position: absolute;
+        //     display: block;
+        //     bottom: 0;
+        // }
+        // &:hover {
+        //     .download-btn {
+        //         position: absolute;
+        //         display: block;
+        //         bottom: 0;
+        //     }
+        // }
+    }
+}
+
+.Slider {
+    display: flex;
+    width: 845px;
+    margin: 0 auto;
+    height: 110px;
+    // margin-bottom: 26px;
+    margin-top: 30px;
+    .swiper-container {
+      width: 88%;
+    }
+    .fillwidth {
+      min-width: 100%;
+      height: auto;
+    }
+    .fillheight {
+      min-height: 100%;
+      width: auto;
+    }
+    &__item-wrapper {
+      cursor: pointer;
+      background-position: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+ .FullNews__top-img__container__heigth {
+    width: 840px; 
+    height: 480px;
+}
+
+.carousel__btns-row {
+    position: absolute;
+    top: 50%;
+    margin-top: -29px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.gallery-btn {
+    position: absolute;
+    left: -130px;
+    cursor: pointer;
+}
+
+.gallery-btn-right {
+    position: absolute;
+    cursor: pointer;
+    left: auto;
+    right: -120px;
+}

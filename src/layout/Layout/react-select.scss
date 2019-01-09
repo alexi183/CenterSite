@@ -1,0 +1,57 @@
+@import "variables";
+
+.react-select-container {
+  color: #000;
+
+  .react-select {
+    &__indicator-separator {
+      display: none;
+    }
+
+    &__control {
+      border-radius: 5px;
+
+      &:hover {
+        border-color: $royal-blue;
+      }
+
+      &--is-focused {
+        border-color: $royal-blue;
+        box-shadow: none;
+      }
+    }
+
+    &__menu {
+      box-shadow: 0 0 13px rgba(2, 2, 2, 0.35);
+      border-radius: 0;
+    }
+
+    &__menu-list {
+      padding: 10px;
+
+    }
+
+    &__option {
+      + .react-select__option {
+        border-top: 1px solid #ccc;
+      }
+
+      &:active {
+        background: rgba($ultramarine, .7);
+        color: #fff;
+      }
+
+      &--is-focused {
+        background: rgba($royal-blue, .7);
+        color: #fff;
+      }
+
+      &--is-selected {
+        background: rgba($royal-blue, .1);
+        color: #000;
+      }
+
+    }
+  }
+
+}

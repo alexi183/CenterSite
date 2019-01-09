@@ -1,0 +1,20 @@
+@import "../../layout/Layout/variables";
+
+.develop-page {
+   background: url("../../img/develop.png") 50% no-repeat;
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 990px;
+
+   &__error {
+      font-size: 60px;
+      font-weight: 400;
+      color: $royal-blue;
+      margin-bottom: 20px;
+      line-height: 1;
+   }
+}
+

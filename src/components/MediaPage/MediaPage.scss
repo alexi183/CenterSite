@@ -1,0 +1,115 @@
+.media-page {
+    animation: fadein 0.886s;
+    .section-wrapper {
+        // margin-top: 32px;
+        .pages-header-wrapper {
+            position: relative;
+            // margin-bottom: 40px;
+            background-color: #ecedef;
+            overflow: hidden;
+            .bc-wrapper {
+              position: relative;
+              padding-top: 13px;
+              padding-left: 95px;
+              z-index: 100;
+            }
+          }
+    }
+    &__header {
+        position: relative;
+        // margin-top: 27px;
+        // margin-bottom: 40px;
+        padding: 50px 35px;
+        padding-top: 34px;
+        padding-left: 95px;
+        padding-bottom: 24px;
+        background-color: #ecedef;
+        overflow: hidden;
+        .title-section {
+            color: #000;
+            text-transform: uppercase;
+            padding-bottom: 18px;
+        }
+    }
+    &__date-change {
+        display: flex;
+        list-style-type: none;
+        margin-left: -10px;
+        padding-left: 0;
+    }
+    &__date-change-item {
+        margin-right: 18px;
+        padding: 0px 10px;
+        &__a {
+            font-size: 18px;
+            color: #000;
+            cursor: pointer;
+            &:hover {
+                color: #000;
+                text-decoration: underline; 
+            }
+            .date-change-calendar-wrapper {
+                display: flex;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+        }
+    }
+    &__sections {
+        position: relative;
+        display: flex;
+        list-style-type: none;
+        margin-left: -15px;
+        padding-left: 10px;
+        z-index: 2;
+    }
+    &__section-item {
+        margin-right: 18px;
+        padding: 5px;
+        &:hover {
+            // background-color: #fff;
+            // .news-page__section-item__a {
+            //     color: #005a80;
+            // }
+        }
+        &__a {
+            font-size: 24px;
+            color: #000; 
+            cursor: pointer;
+            &:hover {
+                color: #000;
+                text-decoration: underline; 
+            }
+        }
+    }
+
+    .header-circle {
+        top: -172px;
+        right: -215px;
+        z-index: 1;
+    }
+    .header-circle__item {
+        &:nth-of-type(1) {
+            background-color: #79d5ee;
+        }
+        &:nth-of-type(2) {
+            background-color: #53c6e5;
+        }
+        &:nth-of-type(3) {
+            background-color: #41bcde;
+        }
+        &:nth-of-type(4) {
+            background-color: #3db3d7;
+        }
+    }
+
+    .breadcrumbs {
+        color: #666666;
+        // text-decoration: underline;
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }

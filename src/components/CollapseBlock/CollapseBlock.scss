@@ -1,0 +1,37 @@
+@import "../../layout/Layout/variables";
+
+.collapse-block {
+  margin-bottom: 30px;
+  font-family: $roboto;
+  font-size: 18px;
+  &__top-row {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  &__title {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  &__content {
+    animation: .2s slideDown forwards;
+    font-family: $roboto-condensed;
+    font-weight: 100;
+  }
+  &__arrow {
+    transition: all .2s;
+    &.expanded {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  100% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+}

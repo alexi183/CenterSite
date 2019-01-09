@@ -1,0 +1,14 @@
+.media-page {
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        align-items: flex-end;
+    }
+    &__blocks-sm-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 45px;
+        margin-left: -16px;
+        margin-right: -30px;
+    }
+}

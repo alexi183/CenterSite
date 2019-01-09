@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 34" width="23" height="34">
+	<defs>
+		<filter id="flt1"> <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.922   0 0 0 0 0.318   0 0 0 0 0.329   0 0 0 1 0" /> </filter>
+		<image width="54" height="82" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NCA4MiIgd2lkdGg9IjU0IiBoZWlnaHQ9IjgyIj4KCTxzdHlsZT4KCQl0c3BhbiB7IHdoaXRlLXNwYWNlOnByZSB9CgkJLnNocDAgeyBmaWxsOiAjMDAwMDAwIH0gCgk8L3N0eWxlPgoJPGcgaWQ9IlBhZ2UgMSI+CgkJPHBhdGggaWQ9IlBhdGggMSIgY2xhc3M9InNocDAiIGQ9Ik0yNy4yMSA0Mi41NkMxOS4wMyA0Mi41NiAxMi40MSAzNS45NCAxMi40MSAyNy43NkMxMi40MSAxOS41OCAxOS4wMyAxMi44NyAyNy4yMSAxMi44N0MzNS4zOSAxMi44NyA0Mi4wMSAxOS40OSA0Mi4wMSAyNy42N0M0Mi4wMSAzNS44NSAzNS4zOSA0Mi41NiAyNy4yMSA0Mi41NlpNNTQuNDIgMjYuODRDNTQuNDIgMTEuNzcgNDIuMjkgLTAuMzcgMjcuMjEgLTAuMzdDMTIuMTMgLTAuMzcgMCAxMS43NyAwIDI2Ljg0QzAgMzYuMDQgNC42IDQ5LjQ2IDExLjQ5IDU4LjU2TDI3LjIxIDgyTDQyLjkzIDU4LjQ3QzQ5LjkyIDQ5LjQ2IDU0LjQyIDM2LjA0IDU0LjQyIDI2Ljg0WiIgLz4KCTwvZz4KPC9zdmc+"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Векторный смарт-объект" style="filter: url(#flt1)" href="#img1" transform="matrix(0.88,0,0,0.86,0,0)"/>
+</svg>

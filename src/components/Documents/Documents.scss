@@ -1,0 +1,44 @@
+@import "../../layout/Layout/variables";
+
+.documents {
+  &__content {
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    &_first-level {
+      border-bottom: 1px solid #cccccc;
+    }
+  }
+
+  &__row {
+    margin-left: 25px;
+    font-family: $roboto;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  &__pdf-icon {
+
+  }
+
+  &__doc-link {
+    line-height: 1.1;
+    color: #000;
+    display: inline-block;
+    margin-left: -30px;
+
+
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+  &__inner-rows {
+    .collapse-block2__title {
+      color: $cornflower;
+    }
+  }
+}

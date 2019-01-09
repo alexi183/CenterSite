@@ -1,0 +1,27 @@
+.partners {
+  animation: fadein 0.886s;
+  margin-bottom: 60px;
+  &__item {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 146px;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.partners-slider img {
+  /*max-width: 160px;
+  height: auto;
+
+  .swiper-slide {
+    width: 320px!important;
+  }*/
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

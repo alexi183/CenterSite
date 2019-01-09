@@ -1,0 +1,38 @@
+.history-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.history-row {
+  font-family: Roboto;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  &__img{
+    width: 136px;
+    height: 127px;
+    position: relative;
+  }
+
+  &__year {
+    color: #6b6a6a;
+    font-size: 32px;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 784px;
+  }
+}
+
+
+
+
+
+

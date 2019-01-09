@@ -1,0 +1,42 @@
+.events-calendar {
+    .col-1 {
+        flex: 0 0 8.333333%;
+        max-width: 4.333333%;
+        padding-left: 0;
+    }
+    .documents__row{
+        // margin-left: -15px;
+    }
+    .documents__inner-rows .documents__wrapper  {
+        // padding-left: 0 !important;
+        margin-left: -15px;
+    }
+    .documents__wrapper_first-level {
+        border: none;
+        margin-left: -40px;
+    }
+    .header-circle {
+        top: -172px;
+        right: -215px;
+        z-index: 1;
+      }
+      .header-circle__item {
+        &:nth-of-type(1) {
+          background-color: #0083AB;
+        }
+        &:nth-of-type(2) {
+          background-color: #0078A0;
+        }
+        &:nth-of-type(3) {
+          background-color: #006E94;
+        }
+        &:nth-of-type(4) {
+          background-color: #005F82;
+        }
+      }
+}
+
+.events-calendar-titles {
+    font-size: 30px;
+    font-weight: 700;
+}

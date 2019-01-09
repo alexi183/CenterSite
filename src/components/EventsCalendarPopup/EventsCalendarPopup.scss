@@ -1,0 +1,201 @@
+@import "../../layout/Layout/variables";
+
+.events-popup {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: -5px;
+  height: 520px;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0 0 21px rgba(2, 2, 2, 0.35);
+  padding: 60px;
+  animation: .3s eventsPopIn forwards;
+  &__close {
+    font-size: 60px;
+    font-family: $roboto;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    line-height: 0;
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__news-item {
+    width: 50%;
+    display: block;
+    color: #000;
+    padding-left: 25px;
+    padding-right: 20px;
+    margin-bottom: 25px;
+    background: url("../../img/news-arr-bullet.png") no-repeat 0 5px;
+    &:hover {
+      color: #000;
+    }
+  }
+  &__news-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.33;
+  }
+  &__news-descr {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+}
+
+@keyframes eventsPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.events-popup-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+/*
+
+datepicker customs
+
+*/
+.events-popup {
+  .DayPicker-Caption {
+    background-color: #005a80;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    div {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+  .DayPicker-NavButton {
+    width: 27px;
+    height: 26px;
+    top: 20px;
+    outline: none;
+    &:active {
+      outline: none;
+    }
+  }
+  .DayPicker-NavButton--next {
+    background: url("../../img/datepicker-next.png");
+  }
+  .DayPicker-NavButton--prev {
+    background: url("../../img/datepicker-prev.png");
+    margin-right: 35px;
+  }
+  .DayPicker-Weekday {
+    color: #41c0e4;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: lowercase;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .DayPicker-Day {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px 23px;
+  }
+  .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    background: transparent !important;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 2px solid rgba($crimson, .3);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .DayPicker-Day--today {
+    position: relative;
+    color: $crimson !important;
+
+  }
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    position: relative;
+    color: #fff!important;
+    background:transparent!important;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $crimson !important;
+      box-shadow: 0 0 21px rgba(3, 4, 4, 0.51) !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 35px;
+      height: 35px;
+      z-index: -1;
+    }
+  }
+  .DayPicker-Day--birthday {
+    background: transparent !important;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 2px solid rgba($crimson, .3);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .DayPicker-Day--weekend {
+    color: $crimson!important;
+  }
+  .DayPicker-Caption {
+    text-transform: uppercase;
+  }
+}
+
+.customscroll-wrapper {
+  div {
+    > div {
+      &:nth-of-type(3) {
+        background-color: #acacac;
+        width: 6px !important;
+        > div {
+          background-color: #005a80 !important;
+          box-shadow: 0 2px 0 #fff, 0 -2px #fff;
+        }
+      }
+
+    }
+
+  }
+}

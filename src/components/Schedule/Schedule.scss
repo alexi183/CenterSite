@@ -1,0 +1,61 @@
+.Schedule {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 260px;
+    height: 485px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 18px rgba(3, 4, 4, 0.41);
+    &:nth-child(5) {
+        margin-right: 0;
+    }
+    &__header {
+        display: flex;
+        flex-direction: column;
+        padding-top: 12px;
+        padding-bottom: 20px;
+        color: #fff;
+        background-color: #015b80;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        padding-left: 0;
+        font-size: 19px;
+        &__type {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #000;
+            &:last-child {
+                // padding-bottom: 0;
+                border-bottom: none;
+            }
+            // border-bottom: 1px solid #000;
+        }
+        &__time {
+            font-weight: 600;
+            &__icon {
+                margin-right: 6px;
+                padding-bottom: 5px;
+            }
+        }
+        &__kind {
+            font-weight: 600;
+        }
+        &__group {
+            font-weight: 600;
+        }
+        &__groups {
+            color: #656565;
+            font-weight: 600;
+        }
+    }
+}

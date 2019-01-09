@@ -1,0 +1,36 @@
+.directions {
+  font-size: 18px;
+  font-weight: 400;
+  &__select-wrapper {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+  &__map-container {
+    margin-bottom: 40px;
+    height: 500px;
+    background: #eee;
+    position: relative;
+    .spinner {
+      position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      margin: 0;
+    }
+  }
+  &__walk-route {
+    width: 80px;
+    height: 5px;
+    background-color: #30bf70;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 14px;
+  }
+  &__car-route {
+    width: 80px;
+    height: 5px;
+    background-color: #eb5155;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 14px;
+  }
+}
