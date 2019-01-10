@@ -27,7 +27,7 @@ class MediaAnnounce extends Component {
             .get("/api/v1/medias/")
             .then(response => {
                 this.setState({
-                    media: response.data.items
+                    media: response.data.itemsz
                 });
             })
             .catch(error => {
@@ -100,7 +100,8 @@ class MediaAnnounce extends Component {
                     </div>
                     <div className="media-announce__blocks-wrapper">
                         <div className="media-announce__col">
-                            {this.state.media.slice(0, 2).map(el => renderMediaBlock(el))}
+                            {this.state.media &&
+                            this.state.media.slice(0, 2).map(el => renderMediaBlock(el))}
                         </div>
                         <div className="media-announce__col">
                             {renderMediaBlockCenter(mediaCenter)}
