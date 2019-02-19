@@ -108,11 +108,20 @@ class Search extends Component {
             }
         }
 
+
         const navLinkRender = (item) => {
-            console.log(item)
+            // console.log(item)
             const linkGenerator = (sectionName) => {
-                console.log(sectionName)
-                return <NavLink to={`/${sectionName}/detail/${item.item}`}>{item.title}</NavLink>
+                // console.log(sectionName)
+                let link = null
+                if(sectionName !== 'events') {
+                    link = <NavLink to={`/${sectionName}/detail/${item.item}`}>{item.title}</NavLink>
+                }else {
+                    link = <NavLink to={`/${sectionName}/event/${item.item}`}>{item.title}</NavLink>
+                }
+                return (
+                    link
+                )
             }
             switch (item.object) {
                 case 'events':
@@ -122,7 +131,7 @@ class Search extends Component {
                 case 'project':
                     return linkGenerator('projects')
                 case 'media':
-                    return linkGenerator('medias')
+                    return linkGenerator('media')
                 default:
                     return
             }
@@ -141,7 +150,7 @@ class Search extends Component {
                         }
                     }
                 >
-                    <div className="mb-4 mt-4">
+                    <div className="mb-4 mt-4" style={{position: 'relative', zIndex: '10'}}>
                         <form>
                             <input
                                 className='search-page__input-text mr-3'
@@ -181,7 +190,7 @@ class Search extends Component {
                                     </div>
                                     <div className="search-page__time-row d-flex align-items-center mb-2">
                                         <img src={clock} alt="time-icon" className='search-page__clock-icon mr-2'/>
-                                        <span>{`${moment(item.date).format("D MMMM YYYY")} года, ${moment(item.date).format("HH:MM")}`}</span>
+                                        <span>{`${moment(item.date).format("D MMMM YYYY")} года`}</span>
                                         {sectionLabel(item.object)}
                                     </div>
                                     <div className="search-page__item-text">

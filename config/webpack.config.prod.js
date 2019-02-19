@@ -18,6 +18,7 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -120,6 +121,7 @@ module.exports = {
             path
                 .relative(paths.appSrc, info.absoluteResourcePath)
                 .replace(/\\/g, '/'),
+        globalObject: 'this'
     },
     optimization: {
         minimizer: [
@@ -464,6 +466,10 @@ module.exports = {
             fileName: 'asset-manifest.json',
             publicPath: publicPath,
         }),
+        // new ManifestPlugin({
+        //     fileName: 'asset-manifest.json',
+        //     publicPath: publicPath,
+        // }),
         // Moment.js is an extremely popular library that bundles large locale files
         // by default due to how Webpack interprets its code. This is a practical
         // solution that requires the user to opt into importing specific locales.

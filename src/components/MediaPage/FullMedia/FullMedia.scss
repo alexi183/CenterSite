@@ -8,17 +8,17 @@
         padding-left: 95px;
         padding-right: 200px;
         padding-bottom: 50px;
-        background-color: #ecedef;
+        background-color: #005a80;
         overflow: hidden;
         &__date {
-            color: #000;
+            color: #fff;
             font-size: 20px;
             font-weight: 600;
             text-transform: uppercase;
         }
         &__name {
             position: relative;
-            color: #000;
+            color: #fff;
             font-family: "Roboto Condensed", sans-serif;
             font-size: 36px;
             font-weight: 700;
@@ -111,4 +111,16 @@
     cursor: pointer;
     left: auto;
     right: -120px;
+}
+
+.lightbox-media__download {
+    display: block;
+    width: 19px;
+    padding-top: 12px;
+    margin-right: 16px;
+    position: fixed;
+    top: 2px;
+    right: 134px;
+    z-index: 1001;
+    opacity: 0.7;
 }

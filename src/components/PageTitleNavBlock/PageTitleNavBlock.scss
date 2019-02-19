@@ -1,5 +1,6 @@
 .page-title-navblock {
-  padding: 30px 10px 30px 85px;
+  min-height: 249px;
+  padding: 15px 20px 20px 95px;
   color: #fff;
   position: relative;
   margin-bottom: 40px;
@@ -26,19 +27,21 @@
   }*/
 
   &__breadcrumbs-row {
+    position: relative;
     margin-bottom: 10px;
-    color: #fff;
+    color: #cdebf5;
+    font-size: 1rem;
 
     a {
       color: inherit;
       display: inline-block;
-      opacity: .8;
+      // opacity: .8;
     }
   }
 
   &__delimiter {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px;
   }
 
   &__title {
@@ -48,10 +51,12 @@
   }
 
   &__links-row {
+    position: relative;
     margin: 30px 0 40px;
     font-size: 20px;
     font-weight: 400;
     margin-left: -15px;
+    z-index: 10;
   }
   &__links-item {
     a {

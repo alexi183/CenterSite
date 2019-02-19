@@ -49,6 +49,8 @@ import EventsCalendarPage from './components/EventsCalendar/EventsCalendarPage'
 import PresentationPage from './components/PresentationPage/PresentationPage'
 import DevelopPage from "./components/DevelopPage/DevelopPage";
 import StructureCompanyPage from "./components/StructureCompanyPage/StructureCompanyPage";
+import BroadcastPage from './components/BroadcastPage/BroadcastPage';
+import PDFslider from './components/PDFslider/PDFslider';
 
 const root = document.getElementById("root");
 
@@ -106,9 +108,10 @@ ReactDOM.render(
                                         <Route path="/content/vestnik-obrazovaniia" component={EducationHeraldComponent} />
                                         <Route path="/content/dokumenty" component={Documents}/>
                                         <Route path="/event-calendar" component={EventsCalendarPage} />
-                                        {/* <Route path="/content/full-event-in-calendar" component={FullEventInCalendar} /> */}
+                                        <Route path="/content/broadcast" component={BroadcastPage} />
                                         <Route path="/content/:page" component={PageContent}/>
                                         <Route path="/page-develop" component={DevelopPage} />
+                                        <Route path="/pdf-slider" component={PDFslider} />
                                         <Redirect to="/404"/>
                                     </Switch>
                                 </PagesLayout>
@@ -125,4 +128,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.unregister();

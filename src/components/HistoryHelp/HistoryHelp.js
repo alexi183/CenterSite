@@ -46,6 +46,7 @@ class HistoryHelp extends Component {
 
                 </div>
                 <div className="history-row__text">
+                    {/* {item.text} */}
                     <div dangerouslySetInnerHTML={createMarkup(item.text)} />
                 </div>
             </div>
@@ -53,18 +54,18 @@ class HistoryHelp extends Component {
 
         return (
             <DocumentTitle title="Историческая справка">
-                <section className="section-wrapper">
+            <section className="section-wrapper">
 
-                    <PageHeader {...pageHeader} />
+                <PageHeader {...pageHeader} />
 
-                    <div className="content-page">
-                        <div className="history-page">
-                            {
-                                (historyHelp) && content
-                            }
-                        </div>
+                <div className="content-page">
+                    <div className="history-page">
+                        {
+                            (historyHelp) && content
+                        }
                     </div>
-                </section>
+                </div>
+            </section>
             </DocumentTitle>
         );
     }

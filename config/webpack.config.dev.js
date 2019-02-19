@@ -14,6 +14,7 @@ const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -109,6 +110,7 @@ module.exports = {
         // Point sourcemap entries to original disk location (format as URL on Windows)
         devtoolModuleFilenameTemplate: info =>
             path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+        globalObject: 'this'
     },
     optimization: {
         // Automatically split vendor and commons
@@ -345,6 +347,10 @@ module.exports = {
             inject: true,
             template: paths.appHtml,
         }),
+        new ManifestPlugin({
+            fileName: 'asset-manifest.json',
+            publicPath: publicPath,
+        }),
         // Makes some environment variables available in index.html.
         // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
         // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -376,10 +382,6 @@ module.exports = {
         // Generate a manifest file which contains a mapping of all asset filenames
         // to their corresponding output file so that tools can pick it up without
         // having to parse `index.html`.
-        new ManifestPlugin({
-            fileName: 'asset-manifest.json',
-            publicPath: publicPath,
-        }),
     ],
 
     // Some libraries import Node modules but don't use them in the browser.

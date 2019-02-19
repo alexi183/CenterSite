@@ -16,6 +16,19 @@ export default class CollapseBlockType2 extends Component {
             }
         )
 
+    componentDidMount() {
+        if (this.props.title === 'Общая информация') {
+            this.setState({
+                collapsed: false
+            })
+        }
+        if (this.props.title === 'Документы') {
+            this.setState({
+                collapsed: false
+            })
+        }
+    }
+
     render() {
         const {title} = this.props
         const {collapsed} = this.state

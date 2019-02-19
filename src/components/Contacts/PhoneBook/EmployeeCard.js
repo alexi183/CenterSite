@@ -16,7 +16,8 @@ export default class EmployeeCard extends Component{
             email,
             department,
             deparnmets_list,
-            handleDepartmentLink
+            handleDepartmentLink,
+            personal_phone
         } = this.props
 
         return (
@@ -50,7 +51,7 @@ export default class EmployeeCard extends Component{
                             Телефон
                         </span>
                         <p className='phonebook__details-text'>
-                            <a href={`tel:${office && office.phone}`}>{office && office.phone + ' '}</a>
+                            <a href={`tel:${office && ((personal_phone !== null) ? personal_phone : office.phone)}`}>{office && ((personal_phone !== null) ? personal_phone : office.phone) + ' '}</a>
                             {
                                 work_phone &&
                                 <span className='phonebook__details-text'>

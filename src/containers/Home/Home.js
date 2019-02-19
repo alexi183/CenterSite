@@ -11,7 +11,9 @@ import Footer from './../../containers/Footer/Footer'
 import NewsSlider from "../../components/NewsSlider/NewsSlider";
 import PageContent from "../../components/PageContent/PageContent";
 
-// import LazyLoad from 'react-lazyload';
+import DocumentTitle from "react-document-title";
+
+import LazyLoad from 'react-lazyload';
 
 @inject('naviStore')
 @observer
@@ -32,6 +34,7 @@ class Home extends Component {
         }
 
         return (
+            <DocumentTitle title="ФГАОУ ДПО ЦРГОП и ИТ">
             <Fragment>
                 <header className={`header ${(this.indexUrl() ? 'header_hidden' : '')}`}>
                     <Header index={index} indexFunc={this.indexUrl} />
@@ -40,12 +43,24 @@ class Home extends Component {
                     {
                         (this.indexUrl()) ?
                             <Fragment>
-                                <NewsSlider/>
-                                <Events/>
+                                <LazyLoad height={560} offset={[-200, 0]}>
+                                    <NewsSlider/>
+                                </LazyLoad>
+                                <LazyLoad height={950}  offset={[-200, 0]}>
+                                    <Events/>
+                                </LazyLoad>
+                                <LazyLoad height={575}  offset={[-200, 0]}>
                                 <MediaAnnounce/>
+                                </LazyLoad>
+                                <LazyLoad height={680}  offset={[-100, 0]}>
                                 <Projects/>
+                                </LazyLoad>
+                                <LazyLoad height={485}  offset={[-100, 0]}>
                                 <EducateEvents />
+                                </LazyLoad>
+                                <LazyLoad height={250}  offset={[-100, 0]}>
                                 <Partners/>
+                                </LazyLoad>
                             </Fragment>
                             :
                             <PageContent url={url} />
@@ -55,6 +70,7 @@ class Home extends Component {
                     <Footer />
                 </footer>
             </Fragment>
+            </DocumentTitle>
         )
     }
 }

@@ -4,6 +4,7 @@ import {inject, observer} from "mobx-react";
 import DayPicker from 'react-day-picker'
 import 'react-day-picker/lib/style.css'
 import {Scrollbars} from 'react-custom-scrollbars'
+import Spinner from "../../components/Spinner/Spinner";
 import MomentLocaleUtils from 'react-day-picker/moment';
 import 'moment/locale/ru'
 import { Link } from 'react-router-dom';
@@ -16,39 +17,45 @@ import moment from "moment";
 class EventsCalendarPopup extends Component {
 
     componentDidMount() {
-        this.props.eventsStore.getCalendarEvents()
-        console.log(this.props.eventsStore.parsedChangeMonth)
-        console.log(this.props.eventsStore.parsedChangeYear)
-    }
-
-    componentWillReceiveProps() {
         this.props.eventsStore.getCalendarEvents(
-            this.props.eventsStore.parsedChangeMonth,
-            this.props.eventsStore.parsedChangeYear
+            this.props.eventsStore.constParsedMonth,
+            this.props.eventsStore.constParsedYear
+        )
+
+        this.props.eventsStore.getDisabledData(
+            this.props.eventsStore.constParsedMonth,
+            this.props.eventsStore.constParsedYear
+        )
+
+        this.props.eventsStore.onDatePickerDateSelected(
+            this.props.eventsStore.constParsedMonth,
+            this.props.eventsStore.constParsedYear
         )
     }
 
     render() {
+
         const {
             onToggleEventsCalendar,
             onDatePickerDateSelected,
             datepickerDateSelected,
             datepickerEventDatesArray,
+            calendarEvent,
             calendarEvents,
+            getCalendarEvents,
+            getCalendarEvent,
             onDatePickerMonth,
             currentMonth,
-            parsedChangeMonth,
+            monthClick,
+            dayClick,
+            calendarDates,
+            getDisabledDataChange,
+            onCaptionClicked,
+            loading
 
         } = this.props.eventsStore
 
-        console.log(parsedChangeMonth);
-
-
-        let dates = this.props.dates.map((item) =>
-            new Date(item.year, item.month, item.day),
-        )
-
-        dates.push(datepickerDateSelected)
+        let dates = calendarDates.map((item) => new Date(item[0], item[1]-1, item[2]))
 
         let dateStart = calendarEvents.map((el, i) =>
             <Fragment key={i}>
@@ -63,7 +70,75 @@ class EventsCalendarPopup extends Component {
         )
 
         let eventDates = dateStart.concat(dateEnd)
+
         let currentparseMonth = moment(currentMonth).format('MM YYYY')
+
+        this.monthClick = (date) => {
+            onDatePickerMonth(date)
+            getDisabledDataChange()
+        }
+
+        let loadingCalendar = null;
+        let loadingEvents = null;
+
+        if (loading) {
+            (loadingCalendar = <Spinner />)
+            &&
+            (loadingEvents  = <Spinner />)
+
+        } else {
+            (loadingCalendar = <DayPicker
+                locale={'ru'}
+                localeUtils={MomentLocaleUtils}
+                onDayClick={
+                    day => onDatePickerDateSelected(day)
+                }
+                onCaptionClick={
+                    day => onDatePickerMonth(day)
+                }
+                onMonthChange={
+                    this.monthClick
+                }
+                disabledDays={
+                    dates
+                }
+                selectedDays={datepickerDateSelected}
+                modifiers={datepickerEventDatesArray}
+            />)
+            &&
+            (loadingEvents =  <Scrollbars
+                style={{height: 400}}>
+                <div className="events-popup__news-wrapper">
+                    <Fragment>
+                        {(currentparseMonth === eventDates[3]) ?
+                            console.log('1') : ''
+                        }
+                    </Fragment>
+                    {
+                        calendarEvents &&
+                        calendarEvents.map((el, i) =>
+                            <Link key={i}
+                                  to={`/events/event/${el.id}`}
+                                  className='events-popup__news-item'
+                                  onClick={onToggleEventsCalendar}
+                            >
+                                <h4 className='events-popup__news-title'>
+                                    <Truncate lines={2}>
+                                        {el.title}
+                                    </Truncate>
+                                </h4>
+
+                                <p className='events-popup__news-descr'>
+                                    <Truncate lines={2}>
+                                        {el.preview}
+                                    </Truncate>
+                                </p>
+                            </Link>
+                        )
+                    }
+                </div>
+            </Scrollbars>)
+        }
 
         return (
             <Fragment>
@@ -72,9 +147,9 @@ class EventsCalendarPopup extends Component {
                     onClick={onToggleEventsCalendar}
                 >&zwnj;</div>
                 <div className='events-popup'>
-                    <div>
-                        {typeof currentparseMonth}
-                    </div>
+                    {/*<div>
+                        {eventDates}
+                    </div>*/}
                     <img
                         src={cross}
                         onClick={onToggleEventsCalendar}
@@ -82,45 +157,11 @@ class EventsCalendarPopup extends Component {
                         alt='close'/>
                     <div className="row">
                         <div className="col-5">
-                            <DayPicker
-                                locale={'ru'}
-                                localeUtils={MomentLocaleUtils}
-                                onDayClick={day => onDatePickerDateSelected(day)}
-                                onMonthChange={date => onDatePickerMonth(date)}
-                                selectedDays={dates}
-                                modifiers={datepickerEventDatesArray}
-                            />
+                            {loadingCalendar}
                         </div>
 
                         <div className="col-7 customscroll-wrapper">
-                            <Scrollbars
-                                style={{height: 400}}>
-                                <div className="events-popup__news-wrapper">
-                                    <Fragment>
-                                        {(currentparseMonth === eventDates[3]) ?
-                                            console.log('1') : ''
-                                        }
-                                    </Fragment>
-                                    {
-                                        calendarEvents &&
-                                        calendarEvents.map((el, i) =>
-                                            <Link key={i} to={`/events/event/${el.id}`} className='events-popup__news-item'>
-                                                <h4 className='events-popup__news-title'>
-                                                    <Truncate lines={2}>
-                                                        {el.title}
-                                                    </Truncate>
-                                                </h4>
-
-                                                <p className='events-popup__news-descr'>
-                                                    <Truncate lines={2}>
-                                                        {el.title}
-                                                    </Truncate>
-                                                </p>
-                                            </Link>
-                                        )
-                                    }
-                                </div>
-                            </Scrollbars>
+                            {loadingEvents}
                         </div>
                     </div>
                 </div>
@@ -133,35 +174,60 @@ export default EventsCalendarPopup
 
 EventsCalendarPopup.defaultProps = {
     dates: [
-        {
-            year: 2018,
-            month: 11,
-            day: 2
-        },
-        {
-            year: 2018,
-            month: 11,
-            day: 4
-        },
-        {
-            year: 2018,
-            month: 10,
-            day: 5
-        },
-        {
-            year: 2018,
-            month: 10,
-            day: 2
-        },
-        {
-            year: 2018,
-            month: 10,
-            day: 4
-        },
-        {
-            year: 2018,
-            month: 10,
-            day: 5
-        }
-    ]
+        [
+            2018,
+            12,
+            2
+        ],
+        [
+            2018,
+            12,
+            4
+        ],
+        [
+            2018,
+            10,
+            5
+        ],
+        [
+            2018,
+            11,
+            4
+        ],
+        [
+            2018,
+            11,
+            26
+        ],
+        [
+            2018,
+            11,
+            15
+        ],
+        [
+            2018,
+            11,
+            14
+        ],[
+            2018,
+            11,
+            17
+        ],
+
+        [
+            2018,
+            11,
+            20
+        ],
+        [
+            2018,
+            10,
+            4
+        ],
+        [
+            2018,
+            10,
+            17
+        ],
+    ],
 };

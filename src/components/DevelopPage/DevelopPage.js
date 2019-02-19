@@ -7,7 +7,8 @@ export default class DevelopPage extends Component {
 
         return (
             <section className='develop-page'>
-                <div className='no-match__inner-wrapper pb-4'>
+
+              <div className='no-match__inner-wrapper pb-4'>
                     <p className='no-match__error' style={{textTransform: "Uppercase", marginBottom: "170px"}}>
                         страница в разработке
                     </p>

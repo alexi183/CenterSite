@@ -51,6 +51,27 @@
     font-weight: 400;
     line-height: 1.4;
   }
+  .DayPicker-Day--disabled {
+    pointer-events: none;
+  }
+  .DayPicker-Day--weekend.DayPicker-Day--disabled {
+    color: #DCE0E0!important;
+  }
+  .DayPicker-Body {
+
+  }
+  .DayPicker-wrapper {
+    outline: none;
+  }
+  .DayPicker-Caption {
+    >div {
+      width: 130px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
 
 @keyframes eventsPopIn {
@@ -113,11 +134,16 @@ datepicker customs
     text-transform: lowercase;
     padding-top: 3px;
     padding-bottom: 3px;
+    animation: fadein 1s;
   }
+  /*.DayPicker-Day--selected {
+    animation: fadein 1.2s;
+  }*/
   .DayPicker-Day {
     font-size: 20px;
     font-weight: 400;
     padding: 5px 23px;
+    animation: fadein 1.2s;
   }
   .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
     background: transparent !important;
@@ -138,7 +164,6 @@ datepicker customs
   .DayPicker-Day--today {
     position: relative;
     color: $crimson !important;
-
   }
   .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
     position: relative;
@@ -181,21 +206,30 @@ datepicker customs
   .DayPicker-Caption {
     text-transform: uppercase;
   }
-}
-
-.customscroll-wrapper {
-  div {
-    > div {
-      &:nth-of-type(3) {
-        background-color: #acacac;
-        width: 6px !important;
-        > div {
-          background-color: #005a80 !important;
-          box-shadow: 0 2px 0 #fff, 0 -2px #fff;
+  .customscroll-wrapper {
+    div {
+      > div {
+        &:nth-of-type(3) {
+          /*background-color: #acacac;*/
+          width: 6px !important;
+          > div {
+            background-color: #005a80 !important;
+            box-shadow: 0 2px 0 #fff, 0 -2px #fff;
+          }
         }
+
       }
 
     }
+  }
+
+  .events-popup__news-wrapper {
 
   }
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

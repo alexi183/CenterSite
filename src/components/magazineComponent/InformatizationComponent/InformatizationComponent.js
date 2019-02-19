@@ -30,8 +30,8 @@ class InformatizationComponent extends Component {
     const pageHeader = {
       breadCrumbs: true,
       title: "Информатизация образования и науки",
-      background: "#ecedef",
-      headerModifierClass: "gray-theme"
+      background: "#005a80",
+      headerModifierClass: "dark-theme"
     };
 
     if (this.state.menuItems === null) {

@@ -11,6 +11,10 @@ const dateSliderParams = {
     spaceBetween: 30,
     autoplay: {
         delay: 3000,
+    },
+    on: {
+        init: () => {
+        }
     }
 }
 
@@ -19,7 +23,9 @@ const dateSliderParams = {
 
 class Partners extends Component {
     componentWillMount() {
-        this.props.partnersStore.getPartners()
+        // if (typeof(this.props.partnersStore.partnersList.items !== undefined)) {
+            this.props.partnersStore.getPartners()
+        // }
     }
 
     render() {
@@ -30,7 +36,7 @@ class Partners extends Component {
         } = this.props
 
         if(partnersList === null) {
-            return <div style={{height: '146px'}}><Spinner /></div>
+            return <div style={{display: 'flex', alignItems: 'center', height: '253px'}}><Spinner /></div>
         }
 
         return (
@@ -58,8 +64,9 @@ class Partners extends Component {
                                         <div key={i} >
                                             <a target='_blank' rel="noopener noreferrer" href={el.url} className='text-center partners__item'>
                                                 <img src={el.thumb_urls.previewPicture
-                                                    ? el.thumb_urls.previewPicture.original
-                                                    : ""} alt=""/>
+                                                            ? el.thumb_urls.previewPicture.original
+                                                            : ""} alt=""/>
+                                                {/* <img src={el.thumb_urls.previewPicture.original} alt=""/> */}
                                             </a>
                                         </div>
                                     )

@@ -19,30 +19,125 @@
 */
 
 .header-content {
-    height: 473px;
+  height: 473px;
+  position: relative;
+  border-radius: 10px;
 }
 
 .header-map {
-    position: absolute;
+  position: absolute;
 
-    &:nth-of-type(odd) {
-        width: 890px;
-        top: -7%;
-    }
+  &:nth-of-type(odd) {
+    width: 890px;
+    top: -7%;
+  }
 
-    &:nth-of-type(even) {
-        top: 17px;
-    }
+  &:nth-of-type(even) {
+    top: 17px;
+  }
 }
 
 .slideFadeOut {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 2s;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 2s;
 }
 
 .slideFadeIn {
-    opacity: 1;
-    visibility: visible;
-    transition: all 2s;
+  opacity: 1;
+  visibility: visible;
+  transition: all 2s;
+}
+
+.gradient-1 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(111, 187, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(111, 187, 219, 1) 0%,
+    rgba(17, 86, 120, 1) 100%
+  );
+}
+
+.gradient-2 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(101, 162, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 162, 219, 1) 0%,
+    rgba(17, 48, 120, 1) 100%
+  );
+}
+
+.gradient-3 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(101, 129, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 129, 219, 1) 0%,
+    rgba(63, 59, 159, 1) 100%
+  );
+}
+
+.gradient-4 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(101, 184, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 184, 219, 1) 0%,
+    rgba(17, 86, 120, 1) 100%
+  );
+}
+
+.gradient-5 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(101, 157, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 157, 219, 1) 0%,
+    rgba(17, 61, 120, 1) 100%
+  );
+}
+
+.gradientTransition-enter {
+  opacity: 0.01;
+}
+
+.gradientTransition-enter.gradientTransition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.gradientTransition-leave {
+  opacity: 1;
+}
+
+.gradientTransition-leave.gradientTransition-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

@@ -1,5 +1,6 @@
 .edu-events-wrapper {
    display: flex;
+   animation: fadein 0.886s;
 }
 
 .edu-events {
@@ -144,4 +145,9 @@
       background-color: #005a80 !important;
       box-shadow: 0 2px 0 #fff, 0 -2px #fff;
    }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

@@ -47,12 +47,10 @@ export class contactsStore {
     @observable loading = false
     @observable mounting = false
 
-    @action
-    switchLoading = () =>
+    @action switchLoading = () =>
         this.loading = !this.loading
 
-    @action
-    getDepartments = () => {
+    @action getDepartments = () => {
         axios.get(`/api/v1/departments/`)
             .then(response => {
                 let data = [];
@@ -78,8 +76,7 @@ export class contactsStore {
         }
     }
 
-    @action
-    selectEmployee = () => {
+    @action selectEmployee = () => {
         // this.switchLoading()
         axios.get(`/api/v1/employees/`, {
             params: {
@@ -89,9 +86,10 @@ export class contactsStore {
 
         })
             .then(response => {
+                // console.log(response)
                 this.staffForSelect = response.data.map(item => {
                     return ({
-                        label: item.surname + ' ' + item.name,
+                        label: item.surname + ' ' + item.name+ ((item.work_phone) ?' (Доб. '+ item.work_phone+ ')' : ''),
                         value: item.surname + ' ' + item.name,
                         department: item.department.id
                     })
@@ -102,8 +100,7 @@ export class contactsStore {
             })
     }
 
-    @action
-    getStuff = () => {
+    @action getStuff = () => {
         this.switchLoading()
         axios.get(`/api/v1/employees/`, {
             params: {
@@ -113,6 +110,7 @@ export class contactsStore {
 
         })
             .then(response => {
+                // console.log(response)
                 this.staff = response.data
                 this.switchLoading()
             })
@@ -121,13 +119,11 @@ export class contactsStore {
             })
     }
 
-    @action
-    setEmploee = (data) => {
+    @action setEmploee = (data) => {
         this.employee = data
     }
 
-    @action
-    setDepartment = (depts) => {
+    @action setDepartment = (depts) => {
         this.department = depts
     }
 }

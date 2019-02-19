@@ -33,6 +33,7 @@
     &:hover {
       color: #000;
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 
@@ -41,4 +42,20 @@
       color: $cornflower;
     }
   }
+  .lightbox-pdfslider__download {
+    display: block;
+    width: 19px;
+    padding-top: 12px;
+    margin-right: 16px;
+    position: fixed;
+    top: 2px;
+    z-index: 1001;
+    right: 134px;
+    opacity: 0.7;
+    -webkit-transform: translateZ(0);
+  }
+}
+
+.ReactModal__Overlay {
+  position: absolute !important;
 }

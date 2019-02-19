@@ -1,0 +1,134 @@
+.particles {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 473px;
+    border-radius: 10px;
+    // opacity: 0.1;
+    // transition: opacity 2s;
+    div canvas {
+        height: 473px !important;
+    }
+}
+
+.gradient-1-particle {
+    // opacity: 1;
+    // transition: opacity 2s;
+    animation: fadein-particle 2s;
+  }
+  
+  .gradient-2-particle {
+    // opacity: 1;
+    // transition: opacity 2s;
+    animation: fadein-particle 2s ;
+  }
+  
+  .gradient-3-particle {
+    opacity: 1;
+    animation: fadein-particle 2s ;
+  }
+  
+  .gradient-4-particle {
+
+    animation: fadein-particle 2s ;
+  }
+  
+  .gradient-5-particle {
+ 
+    animation: fadein-particle 2s ;
+  }
+  
+  @keyframes fadein-particle {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@keyframes changeColor-particle {
+    from {
+        opacity: 0.1;
+        background: rgb(111, 187, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(111, 187, 219, 1) 0%,
+            rgba(17, 86, 120, 1) 100%
+        );
+    }
+    to {
+        opacity: 1;
+        background: rgb(101, 162, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 162, 219, 1) 0%,
+            rgba(17, 48, 120, 1) 100%
+        );
+    }
+}
+
+@keyframes changeColor2-particle {
+    from {
+        opacity: 0;
+        background: rgb(101, 162, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 162, 219, 1) 0%,
+            rgba(17, 48, 120, 1) 100%
+        );
+    }
+    to {
+        opacity: 1;
+        background: rgb(101, 129, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 129, 219, 1) 0%,
+            rgba(63, 59, 159, 1) 100%
+        );
+    }
+}
+
+@keyframes changeColor3-particle {
+    from {
+        opacity: 0;
+        background: rgb(101, 129, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 129, 219, 1) 0%,
+            rgba(63, 59, 159, 1) 100%
+        );
+    }
+    to {
+        opacity: 1;
+        background: rgb(101, 184, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 184, 219, 1) 0%,
+            rgba(17, 86, 120, 1) 100%
+        );
+    }
+}
+
+@keyframes changeColor4-particle {
+    from {
+        opacity: 0;
+        background: rgb(101, 184, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 184, 219, 1) 0%,
+            rgba(17, 86, 120, 1) 100%
+        );
+    }
+    to {
+        opacity: 1;
+        background: rgb(101, 157, 219);
+        background: linear-gradient(
+            90deg,
+            rgba(101, 157, 219, 1) 0%,
+            rgba(17, 61, 120, 1) 100%
+        );
+    }
+}

@@ -2,7 +2,7 @@ import { observable } from "mobx";
 import axios from "axios";
 
 export class partnersStore {
-    @observable partnersList = [];
+    @observable partnersList = null;
     @observable sliderImages = [];
     @observable preview = {};
 

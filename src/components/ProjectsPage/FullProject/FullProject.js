@@ -15,6 +15,10 @@ import project4 from "../../../img/project4.png";
 import project5 from "../../../img/project5.png";
 import project6 from "../../../img/project6.png";
 
+import DOCicon from "../../../img/DOC-icon.png";
+import PDFicon from "../../../img/PDF-icon.png";
+import XLSicon from "../../../img/XLS-icon.png";
+
 @inject("projectsStore")
 @observer
 class FullProject extends Component {
@@ -30,7 +34,7 @@ class FullProject extends Component {
     axios
       .get(`/api/v1/projects/${id}`)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         this.setState({
           selectedProject: response.data,
           loading: false
@@ -63,7 +67,10 @@ class FullProject extends Component {
       selectedProject: selectedProject,
       linkBlock: false
     };
-    console.log(pageHeader);
+
+    if(selectedProject === null) {
+      return null
+    }
 
     return (
       <React.Fragment>
@@ -116,9 +123,61 @@ class FullProject extends Component {
                 dangerouslySetInnerHTML={createMarkup(
                   this.state.selectedProject &&
                     this.state.selectedProject.fulltext
-                )}
-                
-              />
+                )} />
+                {selectedProject.uploaded_files.length > 0 ? (
+          <div className="full-event__download-wrapper" style={{marginBottom: '30px'}}>
+            <div className="full-event__download-wrapper__download">
+              <span style={{ marginRight: "25px" }}>Скачать</span>
+              {selectedProject.uploaded_files.length &&
+                selectedProject.uploaded_files.map(file => (
+                  <a
+                    // style={{ marginRight: "15px" }}
+                    href={file.download_url}
+                    key={file.id}
+                  >
+                    {file.download_url.split(".").pop() === "xlsx" ||
+                        file.download_url.split(".").pop() === "xls" ? (
+                          <div style={{ marginTop: "15px" }}>
+                            <img src={XLSicon} alt="" />
+                            <span style={{ color: "#000", marginLeft: "15px" }}>
+                              {file.display_name !== null && file.display_name !== ''
+                                ? file.display_name
+                                : file.title}
+                            </span>
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                        {file.download_url.split(".").pop() === "doc" ||
+                        file.download_url.split(".").pop() === "docx" ? (
+                          <div style={{ marginTop: "15px" }}>
+                            <img src={DOCicon} alt="" />
+                            <span style={{ color: "#000", marginLeft: "15px" }}>
+                              {file.display_name !== null && file.display_name !== ''
+                                ? file.display_name
+                                : file.title}
+                            </span>
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                        {file.download_url.split(".").pop() === "pdf" ? (
+                          <div style={{ marginTop: "15px" }}>
+                            <img src={PDFicon} alt="" />
+                            <span style={{ color: "#000", marginLeft: "15px" }}>
+                              {file.display_name !== null && file.display_name !== ''
+                                ? file.display_name
+                                : file.title}
+                            </span>
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                  </a>
+                ))}
+            </div>
+          </div>
+        ) : null}
             </div>
           </div>
         </div>

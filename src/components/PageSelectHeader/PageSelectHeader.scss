@@ -3,7 +3,7 @@
         margin-top: 32px;
       .pages-header-wrapper {
         position: relative;
-        background-color: #ecedef;
+        background-color: #005a80;
         overflow: hidden;
         .bc-wrapper {
             position: relative;
@@ -17,12 +17,12 @@
     position: relative;
     padding: 50px 35px;
     padding-left: 95px;
-    background-color: #ecedef;
+    background-color: #005a80;
     overflow: hidden;
     padding-top: 34px;
-    padding-bottom: 24px;
+    // padding-bottom: 24px;
     .title-section {
-      color: #000;
+      color: #fff;
       text-transform: uppercase;
       padding-bottom: 18px;
     }
@@ -37,9 +37,9 @@
         margin-right: 18px;
         padding: 0px 10px;
         cursor: pointer;
-        color: #000;
+        color: #fff;
         &:hover {
-          color: #000;
+          color: #fff;
         }
         &__a {
             font-size: 18px;
@@ -125,7 +125,7 @@
         }
     }
     .breadcrumbs {
-        color: #666666;
+        color: #b2d8e5;
     }
     .selected {
         background-color: #61c3aa;

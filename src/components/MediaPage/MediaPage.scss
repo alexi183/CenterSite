@@ -5,7 +5,7 @@
         .pages-header-wrapper {
             position: relative;
             // margin-bottom: 40px;
-            background-color: #ecedef;
+            background-color: #005a80;
             overflow: hidden;
             .bc-wrapper {
               position: relative;
@@ -23,10 +23,10 @@
         padding-top: 34px;
         padding-left: 95px;
         padding-bottom: 24px;
-        background-color: #ecedef;
+        // background-color: #005a80;
         overflow: hidden;
         .title-section {
-            color: #000;
+            color: #fff;
             text-transform: uppercase;
             padding-bottom: 18px;
         }
@@ -42,10 +42,10 @@
         padding: 0px 10px;
         &__a {
             font-size: 18px;
-            color: #000;
+            color: #fff;
             cursor: pointer;
             &:hover {
-                color: #000;
+                color: #fff;
                 text-decoration: underline; 
             }
             .date-change-calendar-wrapper {
@@ -73,11 +73,11 @@
             // }
         }
         &__a {
-            font-size: 24px;
-            color: #000; 
+            font-size: 20px;
+            color: #fff; 
             cursor: pointer;
             &:hover {
-                color: #000;
+                color: #fff;
                 text-decoration: underline; 
             }
         }
@@ -104,7 +104,7 @@
     }
 
     .breadcrumbs {
-        color: #666666;
+        color: #b2d8e5;
         // text-decoration: underline;
     }
 }

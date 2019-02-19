@@ -1,6 +1,6 @@
 .news-slider {
-  background: #eff1f1;
-  margin-bottom: 60px;
+  // background: #eff1f1;
+  // margin-bottom: 60px;
   padding: 50px 0;
   animation: fadein 0.886s;
   &__slide {
@@ -25,6 +25,14 @@
       margin-right: 0;
     }
   }
+  .swiper-container {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 0 15px;
+      }
+      .news-card__text-wrapper {
+        background: #eff1f1;
+      }
 }
 
 @keyframes fadein {

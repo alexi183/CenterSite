@@ -111,7 +111,6 @@ export class naviStore {
 
     @action fullScreenMenuToggle = () => {
         this.fullScreenMenuIsOpen = !this.fullScreenMenuIsOpen
-
     }
 
     getMenu = () => {
@@ -140,7 +139,7 @@ export class naviStore {
             })
             .catch((error) => {
                 console.log(error);
-                 window.location.replace("/404")
+                window.location.replace("/404")
             })
     }
 
@@ -162,9 +161,8 @@ export class naviStore {
 
     @action getUrl = (link) => {
         this.url = link
-       /* console.log(link)*/
+        /* console.log(link)*/
     }
-
 }
 
 export default new naviStore()

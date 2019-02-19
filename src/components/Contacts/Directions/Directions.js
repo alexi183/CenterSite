@@ -94,7 +94,7 @@ class Directions extends Component {
                             </YMaps>
                         </div>
                         <div className='directions__legend'>
-                            <div><span className='directions__car-route'></span>На автомобиле из центра Москвы</div>
+                            <div><span className='directions__car-route'></span>На автомобиле</div>
                             <div><span className='directions__walk-route'></span>Пешком от станции метро</div>
                         </div>
                     </div>

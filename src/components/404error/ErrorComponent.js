@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ErrorCatch = () => {
+const ErrorCatch = (props) => {
     return (
         <section className='news-page'>
             <div className="section-wrapper">

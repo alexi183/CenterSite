@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import createMarkup from '../../helpers/dangerouslySetHTML';
 import './PageContent.scss';
 import DocumentTitle from "react-document-title";
+
 import PageHeader from '../PageHeader/PageHeader';
 
 @inject('naviStore')
@@ -25,7 +26,7 @@ class PageContent extends Component {
         if(pageData === null) {
             return null
         }
-
+        
         const pageHeader = {
             breadCrumbs: true,
             title: pageData && pageData.title,

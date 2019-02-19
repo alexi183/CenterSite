@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import "./StructureCompanyPage.scss";
-// import PageHeader from "../PageHeader/PageHeader";
-import PageTitleNavBlock from "../PageTitleNavBlock/PageTitleNavBlock";
-import {Route, Switch} from 'react-router-dom';
+import PageHeader from "../PageHeader/PageHeader";
+/*import PageTitleNavBlock from "../PageTitleNavBlock/PageTitleNavBlock";*/
+/*import {Route, Switch} from 'react-router-dom';*/
 import {withRouter } from "react-router";
 import AdministrationCompanyPage from "./Administrative/Administrative"
 import AdministrativeUnit from "./AdministrativeUnit/AdministrativeUnit"
@@ -10,7 +10,7 @@ import InstituteEducation from "./InstituteEducation/InstituteEducation"
 import InstituteIT from "./InstituteIT/InstituteIT"
 import UchebDepartment from "./UchebDepartment/UchebDepartment"
 import ServiceDepartment from "./ServiceDepartment/ServiceDepartment"
-// import structure from "../../img/structure2.png"
+import structure from "../../img/structure2.png"
 
 class StructureCompanyPage extends Component {
 
@@ -19,20 +19,22 @@ class StructureCompanyPage extends Component {
     // }
 
     render() {
-        const {data, contentPages, pageHeader} = this.props
+        /*const {data, contentPages, pageHeader} = this.props*/
 
-        let activePath = this.props.history.location.pathname.split('/')[4];
+        const {pageHeader} = this.props
+
+       /* let activePath = this.props.history.location.pathname.split('/')[4];*/
 
         return (
             <section className="section-wrapper">
 
-                {/* <PageHeader {...pageHeader} />*/}
+                 <PageHeader {...pageHeader} />
 
-                <PageTitleNavBlock data={data} activePath={activePath} />
+                 {/*<PageTitleNavBlock data={data} activePath={activePath} />*/}
 
                 <div className="content-page plr0">
                     <div className="structure-page">
-                        <Switch>
+                        {/*<Switch>
                             {
                                 contentPages.map((item, i) => <Route
                                         path={item.link}
@@ -40,8 +42,8 @@ class StructureCompanyPage extends Component {
                                         key={i}
                                     />
                                 )}
-                        </Switch>
-                        {/*<img src={structure} alt=""/>*/}
+                        </Switch>*/}
+                        <img src={structure} alt=""/>
                     </div>
                 </div>
             </section>
@@ -81,7 +83,7 @@ StructureCompanyPage.defaultProps = {
             },
         ],
         linksRow: [
-            {
+           /* {
                 title: 'Руководство',
                 link: '/content/struktura-i-organy-upravleniia/rukovodstvo'
             },
@@ -104,7 +106,7 @@ StructureCompanyPage.defaultProps = {
             {
                 title: 'Учебно-вспомогательные подразделения',
                 link: '/content/struktura-i-organy-upravleniia/ucheb-department'
-            }
+            },*/
         ]
     },
 

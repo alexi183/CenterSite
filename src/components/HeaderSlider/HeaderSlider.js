@@ -2,11 +2,14 @@ import React, {Component} from 'react'
 import './HeaderSlider.scss'
 import Swiper from 'react-id-swiper'
 import ruslogo from "../../img/ruslogo.png";
+// import logo3 from "../../img/logo3.png";
 import logo1 from "../../img/logo1.png";
 import img3 from "../../img/header-slider-img.png"
 import img4 from "../../img/header-slider-img2.png"
 import img5 from "../../img/header-slider-img3.png"
-import BtnBlue from "../Elements/BtnBlue/BtnBlue";
+// import BtnBlue from "../Elements/BtnBlue/BtnBlue";
+
+// import map from "../../img/map2.png";
 
 class HeaderSlider extends Component {
 
@@ -29,8 +32,15 @@ class HeaderSlider extends Component {
                                             {item.header}
                                         </div>
                                         {item.text}
-                                        <div className="header-slide__btn">
+                                        {/* <div className="header-slide__btn">
                                             {BtnBlue(item.link,'Перейти')}
+                                        </div> */}
+                                        <div className="header-slide__btn">
+                                            <a className="btn-blue " href={item.link}>
+                                                <div className="btn-blue__content">
+                                                    <img alt="" />Перейти
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

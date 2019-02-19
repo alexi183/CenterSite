@@ -15,10 +15,10 @@ const AdditionalContent = (location) => {
                                      to={`/content/finansovo-khoziaistvennaia-deiatelnost`}>Актуальная
                                 информация</NavLink>
                         </li>
-                        <li className='page-header__link '>
+                        {/* <li className='page-header__link '>
                             <NavLink activeClassName='page-header__link_active'
                                      to={`/content/finansovo-khoziaistvennaia-deiatelnost-2`}>Архив</NavLink>
-                        </li>
+                        </li> */}
 
                     </ul>
                 </div>

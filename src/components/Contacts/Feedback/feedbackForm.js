@@ -4,7 +4,7 @@ export default {
             name: 'lastName',
             type: 'text',
             label: 'Фамилия',
-            required: false
+            required: true
         },
         {
             name: 'firstName',
@@ -16,7 +16,7 @@ export default {
             name: 'patronymic',
             type: 'text',
             label: 'Отчество',
-            required: true
+            required: false
         },
         {
             name: 'message',

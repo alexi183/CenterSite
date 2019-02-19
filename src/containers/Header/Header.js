@@ -4,6 +4,9 @@ import HeaderContent from '../../components/HeaderContent/HeaderContent'
 import HeaderTop from '../../components/HeaderTop/HeaderTop';
 import './Header.scss';
 import HeaderCircle from "../../components/HeaderCircle/HeaderCircle";
+/*import EventsCalendarPopup from "../../components/EventsCalendarPopup/EventsCalendarPopup";*/
+import Particle from '../../components/Particle/Particle'
+import sliderImg from '../../img/Page_1.png'
 
 @inject('headerStore')
 @observer
@@ -47,7 +50,9 @@ class Header extends Component {
                 <Fragment>
                     <div className="header-container">
                         <HeaderContent params={params} slideIndex={slideIndex}/>
-                        <HeaderCircle slideIndex={slideIndex} prevIndex={prevIndex} />
+                        <Particle params={params} slideIndex={slideIndex}/>
+                        <div className="header-container__backgroundImage" />
+                        {/* <HeaderCircle slideIndex={slideIndex} prevIndex={prevIndex} /> */}
                     </div>
 
                 </Fragment>

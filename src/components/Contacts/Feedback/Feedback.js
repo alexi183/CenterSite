@@ -41,12 +41,13 @@ class Feedback extends Component {
         const clearFiles = () => {
             this.setState({fileNames: [], filesUploading: ''})
             this.formik.current.state.values.file_input = ''
+            this.formik.current.resetForm();
         }
 
         if (this.state.formSent === true) {
             return <Redirect to="/"/>
         }
-
+        
         return (
             <DocumentTitle title="Форма обратной связи">
                 <section className="section-wrapper feedback">
@@ -72,9 +73,9 @@ class Feedback extends Component {
 
                             onSubmit={(values, {setSubmitting}) => {
 
-                                console.log(
-                                    'values ', values
-                                );
+                                // console.log(
+                                //     'values ', values
+                                // );
 
                                 const formData = new FormData();
                                 formData.append('lastName', values.lastName)

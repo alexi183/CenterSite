@@ -1,7 +1,6 @@
 .header {
   position: relative;
   min-width: 1430px;
-
   .swiper-button-next {
     display: none;
   }
@@ -25,8 +24,18 @@
 
 .header-container {
   position: relative;
-  width: 1430px;
+  width: 1400px;
   margin: 0 auto;
-  padding: 0 15px 0;
+  // padding: 0 15px 0;
+  &__backgroundImage {
+    background: url(../../img//Page_1.png);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1%;
+    right: 0;
+    opacity: 0.7;
+    border-radius: 10px;
+  }
 }
 

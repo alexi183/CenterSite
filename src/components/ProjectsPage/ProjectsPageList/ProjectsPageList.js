@@ -89,27 +89,24 @@ class ProjectsPageList extends React.Component {
                                 <Truncate lines={2}>{item.title}</Truncate>
                               </h2>
                             )}
-
-                            {/* <h2 className="project-card__title">
-                        <Truncate lines={2}>
-                        {item.title}
-                        </Truncate>
-                        </h2> */}
                           </div>
                         </div>
-                        {/* <h2>{item.title}</h2> */}
-                        <p>{item.preview}</p>
+                        <p className="project-card__preview">{item.preview}</p>
                       </Link>
                     </div>
                   </div>
                 </div>
               ))}
-            <PaginationComponent
+            {
+              total > 1 ?
+              <PaginationComponent
               link={this.state.link}
               total={total}
               page={page}
               limit={limit}
             />
+            : null
+            }
           </div>
         )}
       </Fragment>

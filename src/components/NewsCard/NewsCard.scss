@@ -19,12 +19,13 @@
   }
   &__text-wrapper{
     padding: 20px;
+    // background: #eff1f1;
     &:hover {
       text-decoration: none;
     }
   }
   &__title {
-    height: 40px;
+    height: 58px;
     font-size: 18px;
     font-weight: 700; 
     line-height: 20px;
@@ -61,7 +62,7 @@
     background-size: cover;
   }
   &__list-style-title {
-    height: 40px;
+    height: 58px;
     font-size: 22px;
     font-weight: 700;
     line-height: 20px;
